@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books Home</title>
+    <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300,400' rel='stylesheet' type='text/css'>
+
+    <style type="text/css">
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: purple;
+            cursor: pointer;
+            padding-bottom: 3px;
+            /*border-bottom: 3px solid purple; */
+        }
+
+        .NavigationBar {
+            position: fixed;
+            width: 100%;
+            height: 44px;
+            z-index: 1000;
+            /* left: calc(50% - 103px/2); */
+            top: 0%;
+            /* Headline 4 */
+            font-family: Helvetica Neue;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 15px;
+            line-height: 92px;
+            padding-top: 0.1em;
+            /* or 613% */
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            background-image: url("images/gradientBackgroundNavigation.svg");
+
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+            /* White */
+            color: #FFFFFF;
+            text-decoration-style: solid;
+            text-rendering: auto;
+        }
+
+        .Cover{
+        	width: 100%;
+        	margin-top:3.3%;
+        	padding-bottom: 1px;
+        	border-bottom: 3px solid gray;
+        	/*padding: 2%;*/
+        }
+
+
+		.hexagon {
+		  position: relative;
+		  display: inline-block;
+		  /* left/right margin approx. 25% of .hexagon width + spacing */
+		  margin: 1px 18px;
+		  background-color: hsl(220, 75%, 75%);
+		  text-align: center;
+		}
+		.hexagon, .hexagon::before, .hexagon::after {
+		  /* easy way: height is width * 1.732
+		  actual formula is 2*(width/(2*Math.tan(Math.PI/6)))
+		  remove border-radius for sharp corners on hexagons */
+		  width: 67px;
+		  height: 116px;
+		  border-radius: 20%/5%;
+		}
+		.hexagon::before {
+		  background-color: inherit;
+		  content: "";
+		  position: absolute;
+		  left: 0;
+		  transform: rotate(-60deg);
+		}
+		.hexagon::after {
+		  background-color: inherit;
+		  content: "";
+		  position: absolute;
+		  left: 0;
+		  transform: rotate(60deg);
+		}
+		.hexagon:nth-child(even) {
+		  /* top approx. 50% of .hexagon height + spacing */
+		  top: 59px;
+		}
+		.hexagon:hover {
+		  background-color: hsla(60, 75%, 75%, 1.0);
+		  cursor: pointer;
+		  z-index: 105;
+		}
+		.hexagon:active {
+		  background-color: hsla(60, 75%, 50%, 1.0);
+		  z-index: 110;
+		}
+		.hexanone {
+		  position: relative;
+		  display: inline-block;
+		  width: 67px;
+		  height: 116px;
+		  margin: 1px 18px;
+		}
+
+		.hexagontent {
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		  width: 140%;
+		  font-size: 1.4rem;
+		  line-height: 1.2;
+		  z-index: 100;
+		}
+		.ibws-fix {
+		  /* inline-block whitespace fix */
+		  font-size: 0;
+		}
+		.honeycomb {
+		  margin: 0 auto;
+		  text-align: center;
+		}
+
+        .BooksTable{
+        	display: flex;
+        	width:100%;
+        	border-spacing:70px;
+        	justify-content: space-around;
+        }
+
+	    .BookImageDiv{
+	        
+	        background-size: cover;
+	        padding-top:2.2em;
+	        padding-left:2.8em;
+	        padding-right:2.4em;
+	        padding-bottom:2.8em;
+	        background-image: url("images/Books/Book-Test.jpg");
+	    }
+
+	    .BookImage{
+	        height: 270px;
+	        width: 200px;
+	        border-radius: 10px;
+	    }
+
+    </style>
+</head>
+
+
+<body class="Main" style="margin:0px;padding:0px;">
+
+    <div class="NavigationBar">
+        <!-- Navigation Bar -->
+        <p style="padding-left: 5%;">
+            <a href="index.html">
+                Home
+            </a>
+        </p>
+        <p style="padding-left: 4%;">
+            <a href="#About">
+                About
+            </a>
+        </p>
+        <p style="padding-left: 4%;">
+            <a href="#Share">
+                Share
+            </a>
+        </p>
+        <p style="padding-left: 4%;">
+            <a href="Payment.html">
+                Donate
+            </a>
+        </p>
+        <img style="position:absolute;right: 5%" src="images/Search.svg" alt="Search">
+    </div>
+    <img class="Cover" src="images/Cover/image1.jpg" alt="Cover Page">
+<br>
+<br>
+
+<div class="honeycomb">
+  <div class="ibws-fix">
+    <div class="hexagon">
+    <a href="BookCategoryAi.html">
+      <div class="hexagontent"> AI & ML</div>
+  </a>
+    </div>
+    <div class="hexagon">
+        <a href="BookCategoryDataScience.html">
+      <div class="hexagontent">Data Science</div>
+        </a>
+    </div>
+    <div class="hexagon">
+        <a href="BookCategoryLanguages.html">
+      <div class="hexagontent">Languages</div>
+        </a>
+    </div>
+    <div class="hexagon">
+        <a href="BookCategoryAlgorithms.html">
+      <div class="hexagontent">Algorithms</div>
+        </a>
+    </div>
+    <div class="hexagon">
+        <a href="BookCategoryWeb.html">
+      <div class="hexagontent">Web Dev</div>
+        </a>
+    </div>
+      </div> 
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+
+<p style="position:absolute;left:38%;top:25%;font-size:70px;color:black;font-weight: bold;">
+	Languages
+</p>
+
+<table class="BooksTable">
+
+	<tr>
+		<td>
+        <div class="BookImageDiv">
+        <a href="40 Algorithms Every Programmer should know.html">
+            <img class="BookImage" src="
+            Assets/Data Structures and Algorithms/40 Algorithms Every Programmer should know/40algos.jpg" alt="Book Image">
+        </a>
+        </div>
+		</td>
+		<td>
+        <div class="BookImageDiv">
+        <a href="Analysis And Design of Algorithms.html">
+            <img class="BookImage" src="
+            Assets/Data Structures and Algorithms/Analysis And Design of Algorithms/ADA.jpg" alt="Book Image">
+        </a>
+        </div>
+		</td>
+		<td>
+        <div class="BookImageDiv">
+        <a href="Data Structures using C.html">
+            <img class="BookImage" src="
+            Assets/Data Structures and Algorithms/Data Structures using C/datastructures.jpg" alt="Book Image">
+        </a>
+        </div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+        <div class="BookImageDiv">
+        <a href="Design and Analysis of Data Structures.html">
+            <img class="BookImage" src="
+            Assets/Data Structures and Algorithms/Design and Analysis of Data Structures/DAdataStructures.jpg" alt="Book Image">
+        </a>
+        </div>
+		</td>
+		<td>
+        <div class="BookImageDiv">
+        <a href="Introduction to the Design and Analysis of Algorithms.html">
+            <img class="BookImage" src="
+            Assets/Data Structures and Algorithms/Introduction to the Design and Analysis of Algorithms/introtoDAA.jpg" alt="Book Image">
+        </a>
+        </div>
+		</td>
+		<td>
+        <div class="BookImageDiv">
+        <a href="Learning Algorithms Through Programming and Puzzle Solving.html">
+            <img class="BookImage" src="
+            Assets/Data Structures and Algorithms/Learning Algorithms Through Programming and Puzzle Solving/LATPPS.jpg" alt="Book Image">
+        </a>
+        </div>
+		</td>
+	</tr>
+
+</table>
+
+
+</body>
+</html>

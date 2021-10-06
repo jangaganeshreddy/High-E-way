@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books Home</title>
+    <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="clippy/build/clippy.css" media="all">
+    <style type="text/css">
+        html {
+            scroll-behavior: smooth;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: purple;
+            cursor: pointer;
+            padding-bottom: 3px;
+            border-bottom: 3px solid purple; 
+        }
+
+        .BooksTextAnimation{
+            color: gray;
+            opacity: 0.9;
+            /*-webkit-text-stroke: 0.1vw #383d52;*/
+            /*text-transform: uppercase;*/
+        }
+        
+        .BooksTextAnimation::before{
+            content: "Books..";
+            position: absolute;
+            top: 10;
+            left: 9.9;
+            width: 0%;
+            -webkit-text-stroke: 0.1vw #BF4EB1;
+            color: #BF4EB1;
+            border-right: 4px solid #BA9DB1;
+            /*#01fe87*/
+            overflow: hidden;
+            animation: animate 4s linear infinite;
+        }
+
+        @keyframes animate{
+            0%,10%,100%{
+                width:0%;
+            }
+            50%,70%{
+                width:35%;
+            }
+        }
+
+        .Main {
+            position: relative;
+            background-image: url("images/gradientBackground.svg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin: 0px;
+            padding: 0px;
+            scroll-behavior: smooth;
+        }
+
+        .PDFImage {
+            position: absolute;
+            right: 0px;
+            width: 33%;
+            height: auto;
+            top: 2.5em;
+            will-change: transform;
+            transition: transform 250ms;
+            transition-timing-function: ease-out;
+        }
+
+        .PDFImage:hover {
+            /* transition: transform 250ms; */
+            transform: scale(1.2);
+        }
+
+        .NavigationBar {
+            position: fixed;
+            width: 100%;
+            height: 44px;
+            z-index: 2;
+            /* left: calc(50% - 103px/2); */
+            top: 0%;
+            /* Headline 4 */
+            font-family: Helvetica Neue;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 15px;
+            line-height: 92px;
+            padding-top: 0.1em;
+            /* or 613% */
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            background-image: url("images/gradientBackgroundNavigation.svg");
+
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+            /* White */
+            color: #FFFFFF;
+            text-decoration-style: solid;
+            text-rendering: auto;
+        }
+
+        .Heading {
+            position: relative;
+            width: 60%;
+            height: 8%;
+            left: 8%;
+            top: 0.4em;
+            font-family: Helvetica Neue;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 600%;
+            line-height: 125%;
+            /* letter-spacing: -0.04em; */
+            color: #393939;
+        }
+
+        .SubText {
+            position: relative;
+            width: 35%;
+            height: 5%;
+            left: 9%;
+            top: -1em;
+            font-family: Helvetica Neue;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 100%;
+            line-height: 200%;
+            color: #425466;
+
+            mix-blend-mode: luminosity;
+        }
+
+        .Buttons {
+            padding-left: 9%;
+            /* padding-top: 3%; */
+            /* transition: transform 250ms; */
+        }
+
+        .Buttons:hover {
+            cursor: pointer;
+        }
+
+        /* .Buttons:hover{
+        transform: scale(1.2);
+    } */
+        .pushable {
+            background: hsl(340deg 10% 32%);
+            border-radius: 30px;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            outline-offset: 4px;
+        }
+
+        .front {
+            display: block;
+            padding: 6px 25px;
+            border-radius: 30px;
+            font-size: 1rem;
+            background: hsl(345deg 0% 40%);
+            color: white;
+            transform: translateY(-6px);
+        }
+
+        .pushable:active .front {
+            transform: translateY(-2px);
+        }
+
+        .Review {
+            /* columns: 5; */
+            /* width: 25%; */
+            display: flex;
+            /* align-items: center; */
+            /* column-gap: 10%; */
+            justify-content: space-evenly;
+            padding-top: 12em;
+        }
+
+        .Person {
+            position: relative;
+            display: flex;
+            margin-top: -200px;
+            /* column-gap: 40%; */
+            justify-content: space-between;
+            /* padding: 20em; */
+        }
+
+        .AboutUs {
+            columns: 2;
+            column-gap: 0px;
+            margin: auto;
+        }
+
+        .AboutUsText {
+            /* margin: 20px; */
+            background-color: rgb(199, 199, 199);
+            border-radius: 10mm;
+            /* border: black; */
+        }
+
+        .contact {
+            position: absolute;
+            display: flex;
+            right: 5%;
+            padding-top: 6%;
+        }
+    </style>
+</head>
+
+<body class="Main">
+
+    <div class="NavigationBar">
+        <!-- Navigation Bar -->
+        <p style="padding-left: 5%;">
+            <a href="index.html">
+                Home
+            </a>
+        </p>
+        <p style="padding-left: 4%;">
+            <a href="#About">
+                About
+            </a>
+        </p>
+        <p style="padding-left: 4%;">
+            <a href="#Share">
+                Share
+            </a>
+        </p>
+        <p style="padding-left: 4%;">
+            <a href="Payment.html">
+                Donate
+            </a>
+        </p>
+        <img style="position:absolute;right: 5%" src="images/Search.svg" alt="Search">
+    </div>
+
+    <img class="PDFImage" src="images/GroupDigitalNotes-2.png" alt="Notes Picture">
+
+    <p class="Heading">
+        Get <br>All The <span class="BooksTextAnimation">Books..</span> <br>You Need
+    </p>
+    <p class="SubText">
+        A place where you can find digital copies of CS books.
+        <br>Save money by reading from PDF’s
+    </p>
+
+    <div class="Buttons">
+        <!-- <img class="primaryButton" src="images/primaryButton.svg" alt="Start Now"> -->
+        <a href="BookCategoryAlgorithms.html">
+            <button class="pushable">
+                <span class="front">
+                    Start now
+                </span>
+            </button>
+        </a>
+        <!-- <img class="secondaryButton" src="images/secondaryButton.svg" alt="Start Now"> -->
+    </div>
+
+
+    <div id="About" class="Review">
+        <p></p>
+        <img style="background-image:url(images/Review-1.jpg);" src="images/Review-1.svg" alt="Review">
+        <img style="background-image:url(images/Review-1.jpg);" src="images/Review-2.svg" alt="Review">
+        <p></p>
+    </div>
+
+    <div class="Person">
+        <img src="images/Person-1.svg" alt="Review">
+
+        <div style="margin-top:20em;margin-bottom: 10em;display:flex;background-color: rgb(245, 237, 237);
+            padding: 2em;
+            border: 10px solid rgb(170, 135, 135);
+            border-radius: 100px;
+            ">
+
+            <img style="width:100px;height:150px;margin-top: 1em" src="images/Character/Person.webp" alt="Person">
+
+            <div>
+                <p style="font-family: Neuton;
+                margin-top: -0.5em;
+                font-style: normal;
+                font-weight: 800;
+                font-size: 28px;">About Us</p>
+                <p style="font-family: Neuton;
+               /* padding-right: 0.5em; */
+               margin-top: -0.6em;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 1.4em;
+                line-height: 1.3em;">
+                    &nbsp; We are a team from BMU Web programming course.<br>
+                    &nbsp; This project is started as a part of our Course Assignment🎃.<br>
+                    &nbsp; We wish to make it a huge portal for students.<br>
+                    &nbsp; Fell free to share your thoughts, contact us Anytime 💩.<br>
+                </p>
+            </div>
+        </div>
+
+
+        <img src="images/Person-2.svg" alt="Review">
+    </div>
+
+    <img style="float: right;" src="images/ContactInfoBackground.svg" alt="Contact Background">
+
+    <div id="Share" class="contact">
+        <p style="font-family: Helvetica Neue;font-size: 20px;line-height: 92px;letter-spacing: 0.1em;">
+            Connect and share: &nbsp;
+        </p>
+        <img src="images/Social Icons/Instagram.svg" alt="Instagram">
+        <img src="images/Social Icons/Twitter.svg" alt="Twitter">
+        <img src="images/Social Icons/YouTube.svg" alt="YouTube">
+        <img src="images/Social Icons/Facebook.svg" alt="Facebook">
+        <img src="images/Social Icons/Linkedin.svg" alt="Linkedin">
+    </div>
+
+</body>
+
+
+    <!-- Add the stylesheet to the head -->
+    
+    <!-- Add these scripts to  the bottom of the page -->
+    <!-- jQuery 1.7+ -->
+    <script src="jquery.1.7.min.js"></script>
+
+    <!-- Clippy.js -->
+    <script src="clippy/build/clippy.min.js"></script>
+
+    <!-- Init script -->
+    <script type="text/javascript">
+        clippy.load('Merlin', function(agent) {
+            // Do anything with the loaded agent
+            agent.show();
+        });
+    </script>
+
+
+
+
+
+</html>

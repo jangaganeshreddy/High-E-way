@@ -1,0 +1,33 @@
+// [{
+// 	"AI and ML":{
+// 		"id":1
+// 	},
+// 	"Data Science":{
+// 		"id":2
+// 	},
+// 	"Web Development":{
+// 		"id":3
+// 	},
+// 	"App Development":{
+// 		"id":4
+// 	}
+// }]
+
+
+[
+    {
+        "id": "1",
+        "firstName": "John",
+        "lastName": "Doe"
+    },
+    {
+        "id": "2",
+        "firstName": "Mary",
+        "lastName": "Peterson"
+    },
+    {
+        "id": "3",
+        "firstName": "George",
+        "lastName": "Hansen"
+    }
+]
